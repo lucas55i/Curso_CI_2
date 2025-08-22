@@ -18,7 +18,12 @@ jobs:
       with:
         username: lucas55i
         password: ${{ secrets.PASSWORD_DOCKER_HUB }}
-                      
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v4.6.2
+      with:
+        name: programa
+
     - name: Build and push Docker images
       uses: docker/build-push-action@v6.18.0
       with:
