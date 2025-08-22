@@ -24,6 +24,7 @@ jobs:
       with:
         name: programa
         path: main
+        overwrite: true
 
     - name: Build and push Docker images
       uses: docker/build-push-action@v6.18.0
