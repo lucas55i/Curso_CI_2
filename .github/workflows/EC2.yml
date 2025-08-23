@@ -1,0 +1,9 @@
+name: EC2
+
+on:
+  workflow_call:
+
+jobs:
+
+    cd:
+
