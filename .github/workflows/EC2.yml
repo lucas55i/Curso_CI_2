@@ -1,9 +1,11 @@
-name: EC2
+name: Entrega continua
 
 on:
   workflow_call:
 
 jobs:
 
-    cd:
+  EC2:
+    runs-on: ubuntu-latest
+    steps:
 
