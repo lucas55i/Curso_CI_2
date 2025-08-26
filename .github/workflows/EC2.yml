@@ -30,5 +30,19 @@ jobs:
         SCRIPT_AFTER: |
           whoami
           ls -al
-          echo $RSYNC_STDOUT    
+          echo $RSYNC_STDOUT 
+
+    - name: Execute remote SSH commands using key
+      uses: appleboy/ssh-action@v1
+      with:
+        host: ${{ secrets.REMOTE_HOST}}
+        username: ${{ secrets.REMOTE_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
+        script: |
+          export HOST=${{ secrets.REMOTE_HOST }}
+          export USER=${{ secrets.REMOTE_HOST }}
+          export PASSWORD=${{ secrets.REMOTE_HOST }}
+          export DBNAME=${{ secrets.REMOTE_HOST }}
+          export PORT=${{ secrets.REMOTE_HOST }}
 
